@@ -9,7 +9,7 @@ var radiusofcircle = 5
 canvas.addEventListener("mousedown", my_mousedown);
 
 function my_mousedown(e) {
-    color = document.getElementById("color").value;
+    colour = document.getElementById("colour").value;
     widthofline = document.getElementById("widthofline").value;
     radiusofcircle = document.getElementById("radiusofcircle").value;
     mousevent = "mousedown";
@@ -32,14 +32,15 @@ function my_mousemove(e) {
         ctx.beginPath();
         ctx.strokeStyle = colour;
         ctx.lineWidth = widthofline;
-        ctx.arc(current_position_of_mouse_x, current_position_of_mouse_y 2 * Math.PI);
+        ctx.arc(current_position_of_mouse_x, current_position_of_mouse_y, radiusofcircle, 0, 2 * Math.PI);
+
 
 
 
 
         console.log("Last position of x and y coordinates=");
         console.log("x =" + lastpositionX + "y =" + lastpositionY);
-        ctx.moveTo(lastpositionX, lastpositionY);
+
 
 
 
@@ -53,7 +54,7 @@ function my_mousemove(e) {
 
         console.log("Current position of x and y coordinates=");
         console.log("x =" + current_position_of_mouse_x + "y =" + current_position_of_mouse_y);
-        ctx.lineTo(current_position_of_mouse_x, current_position_of_mouse_y);
+
         ctx.stroke();
     }
 
